@@ -1,0 +1,14 @@
+This software contains code adapted from the following projects. The adapted files keep a header naming their
+origin; the original licenses apply to those parts.
+
+- ByteTrack (https://github.com/FoundationVision/ByteTrack), MIT License, Copyright (c) 2021 Yifu Zhang.
+  Kalman filter, track state, IoU matching, and the two-stage association.
+- BoT-SORT (https://github.com/NirAharon/BoT-SORT), MIT License, Copyright (c) 2022 Nir Aharon.
+  ORB global motion compensation (gmc.py, as shipped with McByte and McByte++).
+- McByte (https://github.com/tstanczyk95/McByte), MIT License, Copyright (c) 2025 Tomasz Stanczyk.
+  ORB camera motion compensation at 1/2 resolution, mask-conditioned association, SAM + Cutie mask adapter.
+- McByte++ (https://github.com/tstanczyk95/McBytePlusPlus), Apache License 2.0.
+  Conditional ORB camera motion compensation, EdgeTAM mask adapter, online re-identification reconnection.
+
+External packages used at run time (not included): EdgeTAM (Apache-2.0), Segment Anything (Apache-2.0),
+Cutie (MIT), deep-person-reid / torchreid (MIT), TrackEval (MIT), PyTorch, OpenCV.

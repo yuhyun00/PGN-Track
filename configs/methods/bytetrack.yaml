@@ -1,0 +1,9 @@
+# ByteTrack in McByte's configuration, no camera motion compensation (Tab. 3 "none").
+tracker:
+  track_thresh: 0.6            # high-score threshold; low scores (0.1, track_thresh) go to the second step,
+                               # new tracks need score >= track_thresh + 0.1
+  track_buffer: 30             # lost tracks are kept int(frame_rate / 30 * track_buffer) frames
+  frame_rate: 30               # or 'seqinfo': per-sequence frame rate from seqinfo.ini
+  match_thresh: [0.9, 0.5, 0.7]   # maximum cost of the first, second, and unconfirmed association steps
+motion:
+  type: none

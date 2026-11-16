@@ -1,0 +1,13 @@
+# McByte (public code): ORB CMC at 1/2, SAM (ViT-B) + Cutie masks, conditioned assignment.
+_base_: bytetrack.yaml
+tracker:
+  det_format: mcbyte_text      # detections as McByte's demo reads MOT text files (float32)
+motion:
+  type: cmc
+  cmc:
+    variant: mcbyte            # ORB at 1/2 resolution
+    strict: true               # McByte's code as is: an ORB failure skips CMC for that frame
+masks:
+  type: mcbyte                 # SAM masks propagated by Cutie + McByte's mask cue
+  sam_checkpoint: sam_vit_b_01ec64.pth   # under $WEIGHTS_ROOT
+  cutie_weights: cutie-base-mega.pth     # under $WEIGHTS_ROOT

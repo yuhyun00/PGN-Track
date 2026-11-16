@@ -1,0 +1,5 @@
+# PGN-Track, 1/4 level only.
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    levels: [4]

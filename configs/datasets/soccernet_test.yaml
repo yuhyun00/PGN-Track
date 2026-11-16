@@ -1,0 +1,6 @@
+# SoccerNet tracking test (49 sequences) with the ground-truth boxes shipped in <seq>/det/det.txt.
+data:
+  name: soccernet_test
+  root: soccernet/tracking/test
+  detections: {source: mot}
+eval: {benchmark: custom, preproc: false}          # as sn-tracking's evaluation script

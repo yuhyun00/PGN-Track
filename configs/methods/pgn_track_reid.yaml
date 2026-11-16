@@ -1,0 +1,12 @@
+# McByte++ without masks, with PGN-Track in place of its CMC: the tracker under the paper's identity inference.
+_base_: pgn_track.yaml
+tracker:
+  det_format: mcbytepp_text    # detections as McByte++'s demo reads its text files (0.01 px boxes, float32)
+masks:
+  type: none
+  conditioned: true            # McByte's conditioned assignment: +10 on the row and column of isolated pairs
+reid:
+  type: reconnection           # McByte++ online re-ID (OSNet x1.0); fixed hyper-parameters in reid/reconnection.py
+  weights: sports_model.pth.tar-60     # under $WEIGHTS_ROOT (McByte++'s sports OSNet)
+  device: cuda                 # cuda | cpu (cuda falls back to cpu without a GPU)
+  sim_thresh: 0.8              # cosine similarity to join a terminated identity (mutual nearest neighbours)

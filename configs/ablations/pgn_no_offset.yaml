@@ -1,0 +1,5 @@
+# PGN-Track, no offset term (F_k = 0 in R_k and in the prior).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    alpha: 0

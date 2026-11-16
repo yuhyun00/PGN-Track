@@ -1,0 +1,6 @@
+# ByteTrack + McByte++'s camera motion compensation (conditional ORB at 1/4 resolution).
+_base_: bytetrack.yaml
+motion:
+  type: cmc
+  cmc:
+    variant: mcbytepp          # mcbytepp: conditional ORB 1/4 (McByte++) | mcbyte: ORB 1/2 (McByte)

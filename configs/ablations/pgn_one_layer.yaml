@@ -1,0 +1,5 @@
+# PGN-Track, one layer (all template samples visible).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    layers: false

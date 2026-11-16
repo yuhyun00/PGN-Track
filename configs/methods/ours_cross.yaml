@@ -1,0 +1,5 @@
+# Ours with cross calibration: kappa and pi from the warm-start dataset only (SoccerNet for SportsMOT, SMV-u for
+# SoccerNet), fixed for every video.
+_base_: ours.yaml
+identity:
+  type: cross

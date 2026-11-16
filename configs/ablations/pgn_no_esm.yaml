@@ -1,0 +1,5 @@
+# PGN-Track, plain Gauss-Newton (no ESM).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    esm: false

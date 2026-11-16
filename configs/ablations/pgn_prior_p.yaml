@@ -1,0 +1,5 @@
+# PGN-Track with the prior P_k^-1 instead of (P_k + F_k)^-1.
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    prior: P

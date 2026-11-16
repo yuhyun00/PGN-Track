@@ -1,0 +1,6 @@
+# SMV-u: SportsMOT validation with the detections of a YOLOX model trained on the SportsMOT train split only.
+data:
+  name: sportsmot_valtr
+  root: sportsmot/val
+  detections: {source: npy, dir: sportsmot_valtr}
+eval: {benchmark: custom, preproc: true}

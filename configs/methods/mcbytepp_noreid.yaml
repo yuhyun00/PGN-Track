@@ -1,0 +1,8 @@
+# McByte++ without re-ID: CMC (conditional ORB 1/4) and EdgeTAM masks.
+_base_: bytetrack_cmc.yaml
+tracker:
+  det_format: mcbytepp_text    # detections as McByte++'s demo reads its text files (0.01 px boxes, float32)
+masks:
+  type: mcbytepp               # EdgeTAM mask propagation + McByte's mask cue in the conditioned assignment
+  checkpoint: edgetam.pt       # under $WEIGHTS_ROOT
+  offload: false               # true: frames and memory bank in host memory (same outputs, less GPU memory)

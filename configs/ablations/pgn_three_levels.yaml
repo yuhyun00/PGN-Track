@@ -1,0 +1,5 @@
+# PGN-Track, three-level pyramid (1/16, 1/8, 1/4).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    levels: [16, 8, 4]

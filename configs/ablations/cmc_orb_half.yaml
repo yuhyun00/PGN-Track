@@ -1,0 +1,6 @@
+# ByteTrack + McByte's camera motion compensation (ORB at 1/2 resolution) (Tab. 3 "ORB, 1/2").
+_base_: ../methods/bytetrack.yaml
+motion:
+  type: cmc
+  cmc:
+    variant: mcbyte

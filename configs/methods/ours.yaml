@@ -1,0 +1,13 @@
+# Ours: PGN-Track with McByte++'s re-identification (no masks), plus label-free identity inference (Sec. 4) with
+# online calibration, the paper's default.  Accuracy numbers: tools/identity_offline.py on the outputs of
+# pgn_track_reid.yaml; in the tracker loop (timing), identity.calib must name the warm-start evidence file.
+_base_: pgn_track_reid.yaml
+identity:
+  type: online          # online: video k uses kappa and pi of the warm start + videos 1..k-1 | batch | cross
+  views: 5              # M: visible views per prototype
+  window: 45            # L: frames searched before t_s and after t_e
+  test_iou: 0.3         # interactions whose IoU reaches this value are decided
+  visible_iou: 0.3      # visible view: IoU below this with every other output box of the frame
+  prior: em             # em: EM prior (pi0 0.05, 500 iterations, clipped to [1e-6, 0.5]) | a fixed pi
+  kappa_scale: 1.0      # kappa = -2 mu0 / sigma0^2 of the pair pseudo-splits, times this scale
+  calib: ''             # in-loop only: evidence.json of the warm-start dataset (tools/identity_offline.py)

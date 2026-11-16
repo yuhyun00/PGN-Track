@@ -1,0 +1,5 @@
+# PGN-Track, displacement d_k added to the box (no Kalman update).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    bridge: box

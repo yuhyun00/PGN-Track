@@ -1,0 +1,5 @@
+# PGN-Track, camera only (no track term).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    camera_only: true

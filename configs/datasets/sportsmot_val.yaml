@@ -1,0 +1,6 @@
+# SportsMOT validation (45 sequences) with the detections of McByte's YOLOX model (trained on train + val).
+data:
+  name: sportsmot_val
+  root: sportsmot/val                  # under $DATA_ROOT: <seq>/img1/*.jpg, <seq>/gt/gt.txt, <seq>/seqinfo.ini
+  detections: {source: npy, dir: sportsmot_val}     # under $DET_ROOT: <seq>.npy, rows frame, x1, y1, x2, y2, score
+eval: {benchmark: custom, preproc: true}

@@ -1,0 +1,16 @@
+# ByteTrack + PGN-Track (no re-identification): the motion stage of the paper.
+_base_: bytetrack.yaml
+motion:
+  type: pgn
+  pgn:
+    layers: true               # depth-ordered visibility (false: one layer, all samples visible)
+    prior: PF                  # prior information (P_k + F_k)^-1 of d_k (P: P_k^-1)
+    alpha: 0.05                # offset term F_k = diag((alpha w)^2, (alpha h)^2); 0 disables it
+    bridge: kalman             # kalman: update the filter with (z_k, R_k) | box: add d_k to the predicted box
+    camera_only: false         # true: no track term
+    esm: true                  # efficient second-order minimisation
+    levels: [8, 4]             # pyramid levels, one Gauss-Newton step each
+    warm_start: true           # start from the previous camera motion
+    fallback: previous         # motion applied when the estimate is rejected: previous | zero
+    graph: true                # CUDA graph (ignored on the CPU)
+    device: cuda               # cuda | cpu: same outputs

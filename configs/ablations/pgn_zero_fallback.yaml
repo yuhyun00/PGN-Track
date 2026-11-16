@@ -1,0 +1,5 @@
+# PGN-Track, zero motion when the camera estimate is rejected.
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    fallback: zero

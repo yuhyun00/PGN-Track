@@ -1,0 +1,4 @@
+# Ours with batch calibration: kappa and pi from the unlabeled outputs of the evaluated split itself (offline only).
+_base_: ours.yaml
+identity:
+  type: batch

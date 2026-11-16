@@ -1,0 +1,5 @@
+# SportsMOT test (150 sequences, no public ground truth: submit the results to the evaluation server).
+data:
+  name: sportsmot_test
+  root: sportsmot/test
+  detections: {source: npy, dir: sportsmot_test}

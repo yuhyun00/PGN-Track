@@ -1,0 +1,9 @@
+# MOT17 val-half (second half of the 7 FRCNN training sequences, ByteTrack's split; frames renumbered from 1),
+# standard configuration of ByteTrack: buffer int(fps / 30 * 30) frames, output boxes with w h > 100 and w / h <= 1.6.
+data:
+  name: mot17_valhalf
+  root: mot17/val_half
+  detections: {source: npy, dir: mot17_valhalf}
+tracker: {frame_rate: seqinfo}
+output: {min_box_area: 100, aspect_ratio_thresh: 1.6}
+eval: {benchmark: MOT17, preproc: true}

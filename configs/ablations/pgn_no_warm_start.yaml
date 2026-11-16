@@ -1,0 +1,6 @@
+# PGN-Track, no warm start (nor previous-motion fallback).
+_base_: ../methods/pgn_track.yaml
+motion:
+  pgn:
+    warm_start: false
+    fallback: zero

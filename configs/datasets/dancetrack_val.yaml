@@ -1,0 +1,9 @@
+# DanceTrack validation (25 sequences), standard configuration of ByteTrack's DanceTrack baseline:
+# lost-track buffer of 30 frames (the frame rate is not passed), output boxes with w h > 100.
+data:
+  name: dancetrack_val
+  root: dancetrack/val
+  detections: {source: npy, dir: dancetrack_val}
+tracker: {frame_rate: 30}
+output: {min_box_area: 100}
+eval: {benchmark: MOT17, preproc: true}
